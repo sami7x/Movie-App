@@ -44,6 +44,7 @@ main{
     border-radius: 3px;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
     overflow: hidden;
+    position: relative;
     margin: 1rem;
     width: 300px;
 }
@@ -86,4 +87,25 @@ main{
 
 .movie-info span.red{
     color:red;
+}
+
+.overview{
+    background-color:#fff;
+    padding: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in;
+
+}
+
+.overview h4{
+    margin-top: 0;
+}
+
+.movie:hover .overview{
+    transform: translateY(0);
 }

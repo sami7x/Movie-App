@@ -26,7 +26,7 @@ function showMovies(movies){
   //clear main 
   main.innerHTML= "";
   movies.forEach(movie=>{
-    const { poster_path, title, vote_average} = movie;
+    const { poster_path, title, vote_average, overview} = movie;
   
       const movieE1 = document.createElement('div');
       movieE1.classList.add("movie");
@@ -39,6 +39,10 @@ function showMovies(movies){
               <span class="${getClassByRate(vote_average)}">${vote_average}</span>
             </div>
         </div>
+      <div class="overview">
+      <h4>Overview: </h4>
+        ${overview}
+      </div>
       `;
   
       main.appendChild(movieE1);
@@ -68,7 +72,7 @@ form.addEventListener('submit', (e) =>{
 
  if(searchTerm)
  {
-  getmovies(SEARCHAPI + searchTerm);
+  getMovies(SEARCHAPI + searchTerm);
   search.value = '';
  }
 });
